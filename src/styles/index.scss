@@ -224,4 +224,8 @@ body {
       }
     }
   }
+
+  &:hover .card__info--title {
+    color: #34568b;
+  }
 }
