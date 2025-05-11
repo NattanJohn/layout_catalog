@@ -4,6 +4,11 @@ $primary-blue: #00acdc;
 $card-width: 200px;
 $gap: 48px;
 
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
 html {
   font-family: Roboto, sans-serif;
 }
@@ -74,24 +79,28 @@ html {
   background-color: $primary-blue;
 }
 
-$primary-color: #060b35;
-$secondary-color: #616070;
-
-body {
-  margin: 0;
-  font-family: Roboto, sans-serif;
-}
-
 .main {
   max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 48px;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $gap;
   padding: 50px 40px;
 
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, $card-width);
     justify-content: center;
+  }
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
   }
 }
 
@@ -100,7 +109,7 @@ body {
   height: 406px;
   border: 1px solid #f3f3f3;
   box-sizing: border-box;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
   &:hover {
     transform: scale(1.2);
